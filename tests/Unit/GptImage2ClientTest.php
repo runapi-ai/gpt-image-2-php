@@ -94,6 +94,7 @@ final class GptImage2ClientTest extends TestCase
         $client->editImage->create([
             'model' => 'gpt-image-2',
             'prompt' => 'A product render',
+            'source_image_urls' => ['https://file.runapi.ai/source.png'],
         ]);
 
         self::assertSame('/api/v1/gpt_image_2/edit_image', $transport->requests[0]->getUri()->getPath());
