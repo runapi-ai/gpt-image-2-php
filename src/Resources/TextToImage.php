@@ -10,7 +10,6 @@ use RunApi\Core\RequestOptions;
 use RunApi\Core\Resources\TypedConfiguredResource;
 use RunApi\GptImage2\Models\CompletedImageTaskResponse;
 use RunApi\GptImage2\Models\ImageTaskResponse;
-use RunApi\GptImage2\Types;
 
 /**
  * Generates images from text prompts, with optional aspect ratio and resolution controls.
@@ -69,10 +68,8 @@ readonly class TextToImage extends TypedConfiguredResource
         return new self(
             $http,
             '/api/v1/gpt_image_2/text_to_image',
-            'gpt-image-2/text-to-image',
             ImageTaskResponse::class,
             CompletedImageTaskResponse::class,
-            Types::TEXT_TO_IMAGE_MODELS,
             'text-to-image',
             ImageTaskResponse::class,
             CompletedImageTaskResponse::class,
